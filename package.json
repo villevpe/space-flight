@@ -1,0 +1,28 @@
+{
+    "name": "visual",
+    "version": "1.0.0",
+    "sideEffects": false,
+    "description": "",
+    "main": "./src/index.mjs",
+    "scripts": {
+        "build": "npm run bundle -- --mode development",
+        "build:prod": "npm run bundle -- --mode production",
+        "start": "webpack -w --mode development",
+        "bundle": "webpack src/index.mjs --module-bind 'js=babel-loader' --resolve-extensions .js --plugin offline-plugin"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "gsap": "2.0.2",
+        "three": "0.97.0"
+    },
+    "devDependencies": {
+        "@babel/core": "7.1.2",
+        "@babel/preset-env": "7.1.0",
+        "babel-loader": "8.0.4",
+        "offline-plugin": "5.0.5",
+        "standard": "12.0.1",
+        "webpack": "4.22.0",
+        "webpack-cli": "3.1.2"
+    }
+}
