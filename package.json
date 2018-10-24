@@ -10,7 +10,7 @@
     "heroku-postbuild": "npm run build:prod",
     "start": "node server.js",
     "develop": "webpack -w --mode development",
-    "bundle": "webpack src/index.mjs --module-bind 'js=babel-loader' --resolve-extensions .js --plugin offline-plugin"
+    "bundle": "webpack"
   },
   "author": "",
   "license": "ISC",
