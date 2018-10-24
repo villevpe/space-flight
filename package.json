@@ -1,32 +1,32 @@
 {
-    "name": "space-flight",
-    "version": "0.0.1",
-    "sideEffects": false,
-    "description": "",
-    "main": "./src/index.mjs",
-    "scripts": {
-        "build": "npm run bundle -- --mode development",
-        "build:prod": "npm run bundle -- --mode production",
-        "heroku-postbuild": "npm run build:prod",
-        "start": "http-server ./dist --gzip -p 80",
-        "develop": "webpack -w --mode development",
-        "bundle": "webpack src/index.mjs --module-bind 'js=babel-loader' --resolve-extensions .js --plugin offline-plugin"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "gsap": "2.0.2",
-        "http-server": "0.11.1",
-        "node-static": "^0.7.11",
-        "offline-plugin": "5.0.5",
-        "three": "0.97.0",
-        "webpack": "4.22.0",
-        "webpack-cli": "3.1.2"
-    },
-    "devDependencies": {
-        "@babel/core": "7.1.2",
-        "@babel/preset-env": "7.1.0",
-        "babel-loader": "8.0.4",
-        "standard": "12.0.1"
-    }
+  "name": "space-flight",
+  "version": "0.0.1",
+  "sideEffects": false,
+  "description": "",
+  "main": "./src/index.mjs",
+  "scripts": {
+    "build": "npm run bundle -- --mode development",
+    "build:prod": "npm run bundle -- --mode production",
+    "heroku-postbuild": "npm run build:prod",
+    "start": "node server.js",
+    "develop": "webpack -w --mode development",
+    "bundle": "webpack src/index.mjs --module-bind 'js=babel-loader' --resolve-extensions .js --plugin offline-plugin"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "2.0.2",
+    "http-server": "0.11.1",
+    "node-static": "^0.7.11",
+    "offline-plugin": "5.0.5",
+    "three": "0.97.0",
+    "webpack": "4.22.0",
+    "webpack-cli": "3.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.1.2",
+    "@babel/preset-env": "7.1.0",
+    "babel-loader": "8.0.4",
+    "standard": "12.0.1"
+  }
 }
