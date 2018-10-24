@@ -1,6 +1,6 @@
 {
-    "name": "visual",
-    "version": "1.0.0",
+    "name": "space-flight",
+    "version": "0.0.1",
     "sideEffects": false,
     "description": "",
     "main": "./src/index.mjs",
