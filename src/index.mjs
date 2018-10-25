@@ -22,9 +22,10 @@ const light = createLight()
 scene.add(light)
 
 const geometry = createTubeGeometry(path, scene)
-const tube = createTube(geometry)
-scene.add(tube)
+createTube(geometry).then((tube) => {
+  scene.add(tube)
 
-tweenTube(geometry, (position) => position - 5 + Math.random() * 20)
+  tweenTube(geometry, (position) => position - 5 + Math.random() * 20)
 
-start(camera, path, light, geometry, renderer, scene)
+  start(camera, path, light, geometry, renderer, scene)
+})

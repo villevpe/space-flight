@@ -1,5 +1,6 @@
 import THREE from 'three'
 import { TweenLite } from 'gsap/TweenMax'
+import { texture } from './texture'
 
 export function createRenderer (canvas) {
   const renderer = new THREE.WebGLRenderer({ canvas })
@@ -110,13 +111,24 @@ export function createTubeGeometry (path, scene, tubeDetail = 100, circlesDetail
   return geometry
 }
 
-export function createTube (geometry, size = 0.2, sizeAttenuation = true) {
-  const material = new THREE.PointsMaterial({
-    vertexColors: THREE.VertexColors,
-    size,
-    sizeAttenuation
+export function createTube (geometry, size = 1.5, sizeAttenuation = true) {
+  return new Promise((resolve) => {
+    const loader = new THREE.TextureLoader()
+    loader.load(texture, (map) => {
+      const material = new THREE.PointsMaterial({
+        vertexColors: THREE.VertexColors,
+        size,
+        map,
+        blending: THREE.AdditiveBlending,
+        transparent: true,
+        fog: true,
+        sizeAttenuation,
+        side: THREE.DoubleSide,
+        alphaTest: 0.2
+      })
+      resolve(new THREE.Points(geometry, material))
+    })
   })
-  return new THREE.Points(geometry, material)
 }
 
 export function tweenTube (geometry, transformBy) {
